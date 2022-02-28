@@ -24,7 +24,7 @@ public class ConsumerServiceImpl implements ConsumerService{
 
     @Override
     public Consumer add(Consumer consumer) throws BadConsumerException {
-        if(consumer.getCustId()!=null && consumerDao.existsById(consumer.getCustId()))
+        if(consumer.getConId()!=null && consumerDao.existsById(consumer.getConId()))
             throw new BadConsumerException("Record Exists Already");
         return consumerDao.save(consumer);
     }

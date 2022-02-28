@@ -15,14 +15,14 @@ public class ConsumerController {
     @Autowired
     private ConsumerService consumerService;
 
-    @GetMapping("/{custId}/exists")
-    public ResponseEntity<Boolean> existsByIdAction(@PathVariable("custId") Long custId) throws BadConsumerException {
-        return ResponseEntity.ok(consumerService.existsById(custId));
+    @GetMapping("/{conId}/exists")
+    public ResponseEntity<Boolean> existsByIdAction(@PathVariable("conId") Long conId) throws BadConsumerException {
+        return ResponseEntity.ok(consumerService.existsById(conId));
     }
 
-    @GetMapping("/{custId}")
-    public ResponseEntity<Consumer> getConsumerById(@PathVariable("custId") Long custId) throws BadConsumerException {
-        return ResponseEntity.ok(consumerService.getById(custId));
+    @GetMapping("/{conId}")
+    public ResponseEntity<Consumer> getConsumerById(@PathVariable("conId") Long conId) throws BadConsumerException {
+        return ResponseEntity.ok(consumerService.getById(conId));
     }
 
     @PostMapping

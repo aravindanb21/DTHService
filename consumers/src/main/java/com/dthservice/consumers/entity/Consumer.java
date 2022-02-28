@@ -1,8 +1,5 @@
 package com.dthservice.consumers.entity;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-import org.hibernate.loader.plan.spi.BidirectionalEntityReference;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,7 +8,7 @@ public class Consumer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long custId;
+    private Long conId;
     private String name;
     private String mobile;
     private String email;
@@ -20,19 +17,19 @@ public class Consumer {
         super();
     }
 
-    public Consumer(Long custId, String name, String mobile, String email) {
-        this.custId = custId;
+    public Consumer(Long conId, String name, String mobile, String email) {
+        this.conId = conId;
         this.name = name;
         this.mobile = mobile;
         this.email = email;
     }
 
-    public Long getCustId() {
-        return custId;
+    public Long getConId() {
+        return conId;
     }
 
-    public void setCustId(Long custId) {
-        this.custId = custId;
+    public void setConId(Long conId) {
+        this.conId = conId;
     }
 
     public String getName() {
